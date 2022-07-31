@@ -81,6 +81,9 @@ figure {
 
 figure div {
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 figure img {
@@ -103,10 +106,10 @@ section.alternate figcaption {
 }
 
 h1 {
-	font-size: 120px;
+	font-size: 80px;
 }
 p {
-	font-size: 64px;
+	font-size: 48px;
 }
 
 div.intro {
@@ -170,4 +173,13 @@ div.intro {
 	section {
 		scroll-snap-align: start;
 	}
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 48px;
+  }
+  p {
+    font-size: 16px;
+  }
 }

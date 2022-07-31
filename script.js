@@ -21,8 +21,8 @@ sections.forEach((section) => {
 
 	if (mq.matches) {
 		document.addEventListener("mousemove", (e) => {
-			const aimX = (e.pageX - window.innerWidth / 2) / 10;
-			const aimY = (e.pageY - window.innerHeight / 2) / 10;
+			const aimX = (e.clientX - window.innerWidth / 2) / 10;
+			const aimY = (e.clientY - window.innerHeight / 2) / 10;
 
 			div.style.transform = `rotateX(${aimY}deg) rotateY(${aimX}deg)`;
 		});
