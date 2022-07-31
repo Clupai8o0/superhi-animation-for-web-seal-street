@@ -42,6 +42,9 @@ section img {
   opacity: 0;
 }
 
-section.in-view img {
-  animation: show 0.4s 0.4s both cubic-bezier(0.68,-0.55,0.27,1.55);;
+/** Making the animation happen, only if the user hasn't reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  section.in-view img {
+    animation: show 0.4s 0.4s both cubic-bezier(0.68,-0.55,0.27,1.55);;
+  }
 }
