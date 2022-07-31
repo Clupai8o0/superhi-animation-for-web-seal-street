@@ -1,3 +1,14 @@
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate(0, 24px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
 * {
 	margin: 0;
   box-sizing: border-box;
@@ -10,7 +21,7 @@ body {
 
 section {
 	height: 100vh;
-	padding: 5%;
+	padding: 7%;
 
 	display: flex;
 	align-items: center;
@@ -28,8 +39,9 @@ section.alternate {
 
 section img {
 	max-height: 100%;
+  opacity: 0;
 }
 
-section.in-view {
-
+section.in-view img {
+  animation: show 0.4s 0.4s both cubic-bezier(0.68,-0.55,0.27,1.55);;
 }
