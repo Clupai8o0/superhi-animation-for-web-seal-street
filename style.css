@@ -44,6 +44,7 @@ figure {
 	height: 100%;
 	text-align: center;
 	padding: 7%;
+	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
 figure img {
@@ -56,14 +57,15 @@ figcaption {
 	top: 70%;
 	left: 50%;
 	color: white;
-  transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
 h1 {
-  font-size: 120px;
+	font-size: 120px;
 }
 p {
-  font-size: 64px;
+	font-size: 64px;
 }
 
 /* section img {
