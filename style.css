@@ -14,6 +14,33 @@
 	}
 }
 
+@keyframes intro-box {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes grow-box {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    width: 360px;
+    height: 200px;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-color: transparent;
+  }
+}
+
 * {
 	margin: 0;
 	box-sizing: border-box;
@@ -82,16 +109,49 @@ p {
 	font-size: 64px;
 }
 
-/* section img {
-	max-height: 100%;
-  opacity: 0;
-} */
+div.intro {
+  display: none;
+}
 
 /** Making the animation happen, only if the user hasn't reduced motion */
 @media (prefers-reduced-motion: no-preference) {
 	section.in-view img {
 		animation: show 0.4s 0.4s both cubic-bezier(0.68, -0.55, 0.27, 1.55);
 	}
+
+  div.intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* opacity: 0.2; */
+    pointer-events: none;
+    animation: intro-box 1s 3s both;
+  }
+
+  div.intro div.box {
+    width: 360px;
+    height: 200px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    animation: grow-box 3s 1s both;
+  }
+
+  div.intro div.column {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 /** As long as its desktop and motion isn't reduced, add scroll snap */
 @media (prefers-reduced-motion: no-preference) and (min-width: 900px) {
