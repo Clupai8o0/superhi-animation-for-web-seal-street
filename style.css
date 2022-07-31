@@ -1,9 +1,14 @@
+@font-face {
+	font-family: "Messapia";
+	src: url(assets/messapia-bold.woff2);
+}
+
 @keyframes show {
-	from {
+	0% {
 		opacity: 0;
 		transform: translate(0, 24px) scale(0.95);
 	}
-	to {
+	100% {
 		opacity: 1;
 		transform: translate(0, 0) scale(1);
 	}
@@ -12,11 +17,10 @@
 * {
 	margin: 0;
 	box-sizing: border-box;
-}
-
-body {
+	font-family: Messapia, Arial, Helvetica, sans-serif;
 	font-size: 16px;
-	line-height: 1.5;
+	line-height: 1.25;
+	text-transform: uppercase;
 }
 
 section {
@@ -58,7 +62,12 @@ figcaption {
 	left: 50%;
 	color: white;
 	transform: translate(-50%, -50%);
-  pointer-events: none;
+	pointer-events: none;
+  width: 100%;
+}
+
+section.alternate figcaption {
+  color: black;
 }
 
 h1 {
@@ -80,7 +89,7 @@ p {
 	}
 }
 /** As long as its desktop and motion isn't reduced, add scroll snap */
-@media (prefers-reduced-motion: no-preference) and (max-width: 900px) {
+@media (prefers-reduced-motion: no-preference) and (min-width: 900px) {
 	html,
 	body {
 		height: 100%;
