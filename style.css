@@ -49,6 +49,11 @@ figure {
 	text-align: center;
 	padding: 7%;
 	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  perspective: 800;
+}
+
+figure div {
+  height: 100%;
 }
 
 figure img {
