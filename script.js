@@ -17,10 +17,14 @@ sections.forEach((section) => {
 	observer.observe(section);
 
 	const div = section.querySelector("div");
-	document.addEventListener("mousemove", (e) => {
-		const aimX = (e.pageX - (window.innerWidth / 2)) / 10;
-		const aimY = (e.pageY - (window.innerHeight / 2)) / 10;
+	const mq = window.matchMedia("prefers-reduced-motion: no-preference");
 
-		div.style.transform = `rotateX(${aimY}deg) rotateY(${aimX}deg)`;
-	});
+	if (mq.matches) {
+		document.addEventListener("mousemove", (e) => {
+			const aimX = (e.pageX - window.innerWidth / 2) / 10;
+			const aimY = (e.pageY - window.innerHeight / 2) / 10;
+
+			div.style.transform = `rotateX(${aimY}deg) rotateY(${aimX}deg)`;
+		});
+	}
 });
